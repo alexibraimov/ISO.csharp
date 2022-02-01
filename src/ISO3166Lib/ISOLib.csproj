@@ -37,7 +37,6 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facade\IISOFacade.cs" />
     <Compile Include="ISO\ISO3166.cs" />
     <Compile Include="ISO\ISO639.cs" />
     <Compile Include="Model\Country.cs" />
@@ -46,6 +45,9 @@
     <Compile Include="Model\ISOName.cs" />
     <Compile Include="Model\Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Facade\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
