@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ISO3166Lib.ISO
 {
-    internal class ISO639
+    internal class ISO639 : IISO
     {
         internal readonly static IList<IISOModel> Languages;
         static ISO639()
@@ -196,5 +196,9 @@ namespace ISO3166Lib.ISO
                 new Language(alpha2: "zu", alpha3: "zul", family: "Niger–Congo", name: "Zulu", nativeName: "isiZulu"),
             };
         }
+
+        public ISOName Type => ISOName.ISO639;
+
+        public string Name => "ISO 639";
     }
 }
