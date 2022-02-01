@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ISO3166Lib.Models;
+﻿using System.Collections.Generic;
+using ISO3166Lib.Model;
 
-
-namespace ISO3166Lib.Helpers
+namespace ISO3166Lib.ISO
 {
-    public class ISO3166Facade
+    internal class ISO3166 
     {
-        private static List<Country> _countries { get; }
-        static ISO3166Facade()
+        internal readonly static IList<IISOModel> Countries;
+        static ISO3166()
         {
-            _countries = new List<Country>
+            Countries = new List<IISOModel>
             {
                 new Country(name: "Afghanistan", alpha2:"AF", alpha3:"AFG", countryCode: "004", iso3166_2:"ISO 3166-2:AF", region:"Asia", subRegion:"Asia", intermediateRegion:"", regionCode:"142", subRegionCode:"034", intermediateRegionCode:""),
                 new Country(name: "Åland Islands", alpha2:"AX", alpha3:"ALA", countryCode: "248", iso3166_2:"ISO 3166-2:AX", region:"Europe", subRegion:"Europe", intermediateRegion:"", regionCode:"150", subRegionCode:"154", intermediateRegionCode:""),
@@ -264,25 +261,5 @@ namespace ISO3166Lib.Helpers
                 new Country(name: "Zimbabwe", alpha2:"ZW", alpha3:"ZWE", countryCode: "716", iso3166_2:"ISO 3166-2:ZW", region:"Africa", subRegion:"Africa", intermediateRegion:"Eastern Africa", regionCode:"002", subRegionCode:"202", intermediateRegionCode:"014"),
             };
         }
-        public Country this[string index]
-        {
-            get => GetCountry(index);
-        }
-        public int Count => _countries.Count;
-        public bool Contains(string item, out Country country) 
-        {
-            country = GetCountry(item);
-            return country != null;
-        }
-        public Country GetCountry(string item) => _countries?.FirstOrDefault(c => c.Name == item || c.Alpha2 == item || c.Alpha3 == item || c.CountryCode == item);
-        public Country[] Countries => _countries?.ToArray();
-        public Country[] GetCountries() => Countries;
-        public Country[] GetCountries(string region) => _countries?.Where(c => c.Region == region).ToArray();
-        public string[] GetAlpha2Codes() => _countries?.Select(c => c.Alpha2).ToArray();
-        public string[] GetAlpha3Codes() => _countries?.Select(c => c.Alpha3).ToArray();
-        public string[] GetCountryNames() => _countries?.Select(c => c.Name).ToArray();
-        public string[] GetCountryCodes() => _countries?.Select(c => c.CountryCode).ToArray();
-        public string[] GetRegions() => _countries?.Where(c => !string.IsNullOrEmpty(c.Region)).Select(c => c.Region).Distinct().ToArray();
-        public string[] GetRegionCodes() => _countries?.Where(c=>!string.IsNullOrEmpty(c.RegionCode)).Select(c => c.RegionCode).Distinct().ToArray();
     }
 }
