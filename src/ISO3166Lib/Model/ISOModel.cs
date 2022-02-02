@@ -26,6 +26,7 @@ namespace ISO3166Lib.Model
         public string Alpha2 { get; }
         public string Alpha3 { get; }
         public string Name { get; }
+
         public override string ToString() => Name;
         public override bool Equals(object obj)
         {

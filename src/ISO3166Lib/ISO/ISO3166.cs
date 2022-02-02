@@ -3,7 +3,7 @@ using ISO3166Lib.Model;
 
 namespace ISO3166Lib.ISO
 {
-    internal class ISO3166 : IISO
+    public class ISO3166 : IISO<Country>
     {
         internal readonly static IList<IISOModel> Countries;
         static ISO3166()
@@ -261,9 +261,7 @@ namespace ISO3166Lib.ISO
                 new Country(name: "Zimbabwe", alpha2:"ZW", alpha3:"ZWE", countryCode: "716", iso3166_2:"ISO 3166-2:ZW", region:"Africa", subRegion:"Africa", intermediateRegion:"Eastern Africa", regionCode:"002", subRegionCode:"202", intermediateRegionCode:"014"),
             };
         }
-
-        public ISOName Type => ISOName.ISO3166;
-
+        public int Number => 3166;
         public string Name => "ISO 3166";
     }
 }
