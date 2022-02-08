@@ -2,7 +2,7 @@
 
 namespace ISO3166Lib.Model
 {
-    public abstract class ISOModel : IISOModel
+    public abstract class ISOModel
     {
         public ISOModel(string alpha2, string alpha3, string name)
         {
@@ -22,11 +22,9 @@ namespace ISO3166Lib.Model
             Alpha3 = Alpha3;
             Name = name;
         }
-
         public string Alpha2 { get; }
         public string Alpha3 { get; }
         public string Name { get; }
-
         public override string ToString() => Name;
         public override bool Equals(object obj)
         {

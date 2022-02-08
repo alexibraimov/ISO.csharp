@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ISO3166Lib.ISO
 {
-    public class ISO639 : IISO<Language>
+    public class ISO639 : ISO<Language>
     {
-        internal readonly static IList<IISOModel> Languages;
+        private readonly static IList<Language> _languages;
         static ISO639()
         {
-            Languages = new List<IISOModel>
+            _languages = new List<Language>
             {
                 new Language(alpha2: "aa", alpha3: "aar", family: "Afro-Asiatic", name: "Afar", nativeName: "Afaraf"),
                 new Language(alpha2: "ab", alpha3: "abk", family: "Northwest Caucasian", name: "Abkhaz", nativeName: "аҧсуа бызшәа, аҧсшәа"),
@@ -196,7 +196,11 @@ namespace ISO3166Lib.ISO
                 new Language(alpha2: "zu", alpha3: "zul", family: "Niger–Congo", name: "Zulu", nativeName: "isiZulu"),
             };
         }
-        public int Number => 639;
-        public string Name => "ISO 639";
+        public ISO639() : base()
+        {
+            _models = _languages;
+        }
+        public override int Number => 639;
+        public  override string Name => "ISO 639";
     }
 }

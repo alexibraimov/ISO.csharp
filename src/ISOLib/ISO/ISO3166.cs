@@ -3,12 +3,12 @@ using ISO3166Lib.Model;
 
 namespace ISO3166Lib.ISO
 {
-    public class ISO3166 : IISO<Country>
+    public class ISO3166 : ISO<Country>
     {
-        internal readonly static IList<IISOModel> Countries;
+        private readonly static IList<Country> _countries;
         static ISO3166()
         {
-            Countries = new List<IISOModel>
+            _countries = new List<Country>
             {
                 new Country(name: "Afghanistan", alpha2:"AF", alpha3:"AFG", countryCode: "004", iso3166_2:"ISO 3166-2:AF", region:"Asia", subRegion:"Asia", intermediateRegion:"", regionCode:"142", subRegionCode:"034", intermediateRegionCode:""),
                 new Country(name: "Åland Islands", alpha2:"AX", alpha3:"ALA", countryCode: "248", iso3166_2:"ISO 3166-2:AX", region:"Europe", subRegion:"Europe", intermediateRegion:"", regionCode:"150", subRegionCode:"154", intermediateRegionCode:""),
@@ -261,7 +261,11 @@ namespace ISO3166Lib.ISO
                 new Country(name: "Zimbabwe", alpha2:"ZW", alpha3:"ZWE", countryCode: "716", iso3166_2:"ISO 3166-2:ZW", region:"Africa", subRegion:"Africa", intermediateRegion:"Eastern Africa", regionCode:"002", subRegionCode:"202", intermediateRegionCode:"014"),
             };
         }
-        public int Number => 3166;
-        public string Name => "ISO 3166";
+        public ISO3166() : base()
+        {
+            _models = _countries;
+        }
+        public override int Number => 3166;
+        public  override string Name => "ISO 3166";
     }
 }
