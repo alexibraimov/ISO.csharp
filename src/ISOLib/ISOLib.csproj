@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>Ibraimov Alexander</Authors>
+    <Description>Library for working with ISO standards
+</Description>
+    <Copyright>2022</Copyright>
   </PropertyGroup>
 
 </Project>
