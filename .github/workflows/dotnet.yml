@@ -19,13 +19,13 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ./src/ISOLib/
+      working-directory: ./src/ISOLib
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: ./src/ISOLib/
+      working-directory: ./src/ISOLib
     - name: Generate nuget package
       run: dotnet pack --configuration Release -o nupkg
-      working-directory: ./src/ISOLib/
+      working-directory: ./src/ISOLib
     - name: Publish nuget package
       run: find . -name *.nupkg -type f -print0 | xargs -0 -I pkg dotnet nuget push pkg -k $nuget_api_key -s "https://api.nuget.org/v3/index.json" --skip-duplicate
       env:
