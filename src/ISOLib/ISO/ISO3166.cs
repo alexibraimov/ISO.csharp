@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ISO3166Lib.Model;
+using ISOLib.Model;
 
-namespace ISO3166Lib.ISO
+namespace ISOLib.ISO
 {
     public class ISO3166 : ISO<Country>
     {

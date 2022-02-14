@@ -1,7 +1,7 @@
-﻿using ISO3166Lib.Model;
+﻿using ISOLib.Model;
 using System.Collections.Generic;
 
-namespace ISO3166Lib.ISO
+namespace ISOLib.ISO
 {
     public class ISO639 : ISO<Language>
     {

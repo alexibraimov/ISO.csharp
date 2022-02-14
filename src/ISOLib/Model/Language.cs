@@ -1,4 +1,4 @@
-﻿namespace ISO3166Lib.Model
+﻿namespace ISOLib.Model
 {
     public class Language : ISOModel
     {

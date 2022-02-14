@@ -1,8 +1,8 @@
-﻿using ISO3166Lib.Model;
+﻿using ISOLib.Model;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ISO3166Lib.ISO
+namespace ISOLib.ISO
 {
     //TODO: Add methods description
     public abstract class ISO <T> where T: ISOModel

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ISO3166Lib.Model
+namespace ISOLib.Model
 {
     public abstract class ISOModel
     {
