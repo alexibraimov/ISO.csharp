@@ -19,7 +19,7 @@ namespace ISOLib.Model
                 throw new ArgumentNullException("Name cannot be empty or null");
             }
             Alpha2 = alpha2;
-            Alpha3 = Alpha3;
+            Alpha3 = alpha3;
             Name = name;
         }
         public string Alpha2 { get; }
