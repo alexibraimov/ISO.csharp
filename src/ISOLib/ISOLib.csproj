@@ -6,6 +6,7 @@
     <Description>Library for working with ISO standards
 </Description>
     <Copyright>2022</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
