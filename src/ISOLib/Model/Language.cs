@@ -1,4 +1,6 @@
-﻿namespace ISOLib.Model
+﻿using System.Collections.Generic;
+
+namespace ISOLib.Model
 {
     public class Language : ISOModel
     {
@@ -9,5 +11,12 @@
         }
         public string Family { get; }
         public string NativeName { get; }
+        public override IDictionary<string, string> ToDictionary()
+        {
+            var baseDictionary = base.ToDictionary();
+            baseDictionary.Add("family", Family);
+            baseDictionary.Add("nativeName", NativeName);
+            return baseDictionary;
+        }
     }
 }

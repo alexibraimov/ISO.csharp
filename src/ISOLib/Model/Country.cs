@@ -1,4 +1,6 @@
-﻿namespace ISOLib.Model
+﻿using System.Collections.Generic;
+
+namespace ISOLib.Model
 {
     public class Country  : ISOModel
     {
@@ -24,5 +26,18 @@
         public string RegionCode { get; }
         public string SubRegionCode { get; }
         public string IntermediateRegionCode { get; }
+        public override IDictionary<string, string> ToDictionary()
+        {
+            var baseDictionary =  base.ToDictionary();
+            baseDictionary.Add("countryCode", CountryCode);
+            baseDictionary.Add("iso3166_2", ISO3166_2);
+            baseDictionary.Add("region", Region);
+            baseDictionary.Add("subRegion", SubRegion);
+            baseDictionary.Add("intermediateRegion", IntermediateRegion);
+            baseDictionary.Add("regionCode", RegionCode);
+            baseDictionary.Add("subRegionCode", SubRegionCode);
+            baseDictionary.Add("intermediateRegionCode", IntermediateRegionCode);
+            return baseDictionary;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ISOLib.Model
 {
@@ -35,5 +36,14 @@ namespace ISOLib.Model
             return false;
         }
         public override int GetHashCode() => Alpha3.GetHashCode();
+        public virtual IDictionary<string, string> ToDictionary()
+        {
+            return new Dictionary<string, string>()
+            {
+                ["alpha2"] = Alpha2,
+                ["alpha3"] = Alpha3,
+                ["name"] = Name
+            };
+        }
     }
 }
