@@ -5,7 +5,7 @@ A C# library providing ISO 3166-1,2 and ISO 639-1-2 data.
 
 
 https://www.nuget.org/packages/ISOLib/
-
+[![.NET](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml)
 ## Usage
 
 ### ISO 3166
