@@ -265,7 +265,7 @@ namespace ISOLib.ISO
         {
             _models = _countries;
         }
-        public override int Number => 3166;
-        public  override string Name => "ISO 3166";
+        public override int Number { get; } = 3166;
+        public override string Name { get; } = "ISO 3166";
     }
 }

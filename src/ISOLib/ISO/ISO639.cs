@@ -200,7 +200,7 @@ namespace ISOLib.ISO
         {
             _models = _languages;
         }
-        public override int Number => 639;
-        public  override string Name => "ISO 639";
+        public override int Number { get; } = 639;
+        public override string Name { get; } = "ISO 639";
     }
 }
