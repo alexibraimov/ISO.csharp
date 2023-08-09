@@ -28,7 +28,7 @@ jobs:
       run: dotnet test --configuration Release
       working-directory: ./src/ISO.Tests
     - name: Generate nuget package
-      run: dotnet pack --configuration Release -o nupkg
+      run: dotnet pack --configuration Release -o nupkg ISOLib.sln
       working-directory: ./src/ISO
     - name: Publish nuget package
       run: find . -name *.nupkg -type f -print0 | xargs -0 -I pkg dotnet nuget push pkg -k $nuget_api_key -s "https://api.nuget.org/v3/index.json" --skip-duplicate
