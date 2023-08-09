@@ -9,16 +9,16 @@ A library that provides access to ISO standards, including ISO 639 (language cod
 ### Usage
 
    ```csharp
-        Language lang = ISO.LanguageCollection["eng"];
-        Console.WriteLine(lang);
+Language lang = ISO.LanguageCollection["eng"];
+Console.WriteLine(lang);
 
-        foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A'))
-        {
-            Console.WriteLine(country);
-        }
+foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A'))
+{
+    Console.WriteLine(country);
+}
 
-        string currencies = string.Join('\n', ISO.CurrencyCollection.OrderBy(x => x.Name).Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
-        Console.WriteLine(currencies);
+string currencies = string.Join('\n', ISO.CurrencyCollection.OrderBy(x => x.Name).Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
+Console.WriteLine(currencies);
    ```
 
 ## Models
