@@ -1,28 +1,26 @@
 # ISO.csharp
 
-A C# library providing ISO 3166-1,2 and ISO 639-1-2 data.
-
-
+A library that provides access to ISO standards, including ISO 639 (language codes), ISO 3166 (country codes), and ISO 4217 (currency codes).
 
 
 [![NuGet version (ISOLib)](https://img.shields.io/nuget/v/ISOLib.svg?style=flat-square)](https://www.nuget.org/packages/ISOLib/)
 [![ISOLib](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml)
 
-## Usage
-
-### ISO 3166
+### Usage
 
    ```csharp
-      ISO<Country> iso3166 = new ISO3166();
-      Country[] countries = iso3166.GetArray();
-   ```
- 
-### ISO 639
+        Language lang = ISO.LanguageCollection["eng"];
+        Console.WriteLine(lang);
 
-   ```csharp
-      ISO<Language> iso639 = new ISO639();
-      Language[] languages = iso639.GetArray();
+        foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A'))
+        {
+            Console.WriteLine(country);
+        }
+
+        string currencies = string.Join('\n', ISO.CurrencyCollection.OrderBy(x => x.Name).Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
+        Console.WriteLine(currencies);
    ```
+
 ## Models
 
 ### Country model
@@ -57,4 +55,15 @@ class Language
     string NativeName { get; }
 }
    ```
+### Currency model
 
+  ```csharp
+class Currency
+{
+    string Name { get; }
+    string Alpha2 { get; }
+    string Alpha3 { get; }
+    string Number { get; }
+    int MinorUnit { get; }
+}
+   ```
