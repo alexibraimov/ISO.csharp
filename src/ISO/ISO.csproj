@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net6.0;net7.0;</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<Authors>Ibraimov Alexander</Authors>
+		<Description>A library that provides access to ISO standards, including ISO 639 (language codes), ISO 3166 (country codes), and ISO 4217 (currency codes).</Description>
+		<Copyright>2023</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>ISO,ISO3166,ISO639,ISO4217,639,3166,4217,ISO 639,ISO 3166,ISO 4217</PackageTags>
+		<RepositoryUrl>https://github.com/AlexanderIbraimov/ISO.csharp</RepositoryUrl>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Version>2.0.0</Version>
+	</PropertyGroup>
+</Project>
