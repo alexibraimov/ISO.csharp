@@ -14,7 +14,7 @@ Console.WriteLine(lang);
 
 foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A'))
 {
-    Console.WriteLine(country);
+       Console.WriteLine(country);
 }
 
 string currencies = string.Join('\n', ISO.CurrencyCollection
