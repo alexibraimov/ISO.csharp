@@ -4,7 +4,7 @@
     {
         internal Language(string name, string alpha3, string? alpha2, string? family, string? nativeName) : base(alpha3: alpha3, name: name)
         {
-            Alpha2 = alpha2;
+            Alpha2 = alpha2?.ToUpper();
             Family = family;
             NativeName = nativeName;
         }

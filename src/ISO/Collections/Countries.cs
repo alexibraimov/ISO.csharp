@@ -275,12 +275,9 @@
         {
             get
             {
-                var country = Items.FirstOrDefault(c => c.Name == countryName || c.Alpha2 == countryName || c.Alpha3 == countryName);
-                if (country == null)
-                {
-                    throw new ArgumentException("Country not found", nameof(countryName));
-                }
-                return country;
+                var countryId = countryName.ToLower();
+                var country = Items.FirstOrDefault(c => c.Name.ToLower() == countryId || c.Alpha2?.ToLower() == countryId || c.Alpha3.ToLower() == countryId);
+                return country ?? throw new ArgumentException("Country not found", nameof(countryName));
             }
         }
     }

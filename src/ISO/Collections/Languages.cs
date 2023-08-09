@@ -211,12 +211,9 @@
         {
             get
             {
-                var language = Items.FirstOrDefault(l => l.Name == langName || l.Alpha2 == langName || l.Alpha3 == langName);
-                if (language == null)
-                {
-                    throw new ArgumentException("Language not found", nameof(langName));
-                }
-                return language;
+                var langId = langName.ToLower();
+                var language = Items.FirstOrDefault(l => l.Name.ToLower() == langId || l.Alpha2?.ToLower() == langId || l.Alpha3.ToLower() == langId);
+                return language ?? throw new ArgumentException("Language not found", nameof(langName));
             }
         }
     }

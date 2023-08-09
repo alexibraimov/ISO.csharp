@@ -7,7 +7,7 @@
                          string? subRegion = null, string? intermediateRegion = null,
                          string? regionCode = null, string? subRegionCode = null, string? intermediateRegionCode = null) : base(alpha3: alpha3, name: name)
         {
-            Alpha2 = alpha2;
+            Alpha2 = alpha2?.ToUpper();
             CountryCode = countryCode;
             ISO3166_2 = iso3166_2;
             Region = region;

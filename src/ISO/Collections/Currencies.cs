@@ -204,12 +204,9 @@
         {
             get
             {
-                var currency = Items.FirstOrDefault(c => c.Name == currencyName || c.Alpha3 == currencyName);
-                if (currency == null)
-                {
-                    throw new ArgumentException("Currency not found", nameof(currencyName));
-                }
-                return currency;
+                var currencyId = currencyName.ToLower();
+                var currency = Items.FirstOrDefault(c => c.Name.ToLower() == currencyId || c.Alpha3.ToLower() == currencyId);
+                return currency ?? throw new ArgumentException("Currency not found", nameof(currencyName));
             }
         }
     }

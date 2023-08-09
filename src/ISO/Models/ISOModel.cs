@@ -13,7 +13,7 @@
             {
                 throw new ArgumentNullException("Name cannot be empty or null");
             }
-            Alpha3 = alpha3;
+            Alpha3 = alpha3.ToUpper();
             Name = name;
         }
 
