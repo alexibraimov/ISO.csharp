@@ -16,7 +16,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ISO.sln
       working-directory: ./src/ISO
     - name: Build
       run: dotnet build --configuration Release --no-restore
