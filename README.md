@@ -17,7 +17,9 @@ foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A')
     Console.WriteLine(country);
 }
 
-string currencies = string.Join('\n', ISO.CurrencyCollection.OrderBy(x => x.Name).Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
+string currencies = string.Join('\n', ISO.CurrencyCollection
+                          .OrderBy(x => x.Name)
+                          .Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
 Console.WriteLine(currencies);
    ```
 
