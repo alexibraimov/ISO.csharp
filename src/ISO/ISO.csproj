@@ -9,6 +9,6 @@
 		<PackageTags>ISO,ISO3166,ISO639,ISO4217,639,3166,4217,Languages,Countries,Currencies,Language,Country,Currency</PackageTags>
 		<RepositoryUrl>https://github.com/AlexanderIbraimov/ISO.csharp</RepositoryUrl>
 		<NeutralLanguage>en</NeutralLanguage>
-		<Version>2.1.0</Version>
+		<Version>2.1.1</Version>
 	</PropertyGroup>
 </Project>
