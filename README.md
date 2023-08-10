@@ -9,18 +9,25 @@ A library that provides access to ISO standards, including ISO 639 (language cod
 ### Usage
 
    ```csharp
-Language lang = ISO.LanguageCollection["eng"];
-Console.WriteLine(lang);
+Language lang = Languages.Collection["eng"];
+if (lang == Languages.ENG || lang == Languages.KIR)
+      Console.WriteLine(lang);
 
-foreach (Country country in ISO.CountryCollection.Where(c => c.Alpha3[0] == 'A'))
+Country[] countries = Countries.Collection.Where(c => c.Name[0] == 'A').ToArray();
+foreach (Country country in countries)
 {
-       Console.WriteLine(country);
+      Language[] langs = country.GetLanguages();
+      Currency[] currencies = country.GetCurrencies();
+      string langsColumn = string.Join(',', langs.Select(l => l.Name));
+      string currenciesColumn = string.Join(',', currencies.Select(l=>l.Alpha3));
+      Console.WriteLine($"{country.Alpha2};{country.Name};{currenciesColumn};{langsColumn}");
 }
 
-string currencies = string.Join('\n', ISO.CurrencyCollection
-                          .OrderBy(x => x.Name)
-                          .Select(x => $"{x.Name}; {x.Alpha3}; {x.MinorUnit}"));
-Console.WriteLine(currencies);
+Currency[] supportedCurrencies = Currencies.FilterCurrencies("USD", "KGS", "RUB");
+foreach (var currency in supportedCurrencies)
+{
+      Console.WriteLine(currency);   
+}
    ```
 
 ## Models
@@ -30,17 +37,20 @@ Console.WriteLine(currencies);
   ```csharp
 class Country
 {
-    string Name { get; }
-    string Alpha2 { get; }
-    string Alpha3 { get; }
-    string CountryCode { get; }
-    string ISO3166_2 { get; }
-    string Region { get; }
-    string SubRegion { get; }
-    string IntermediateRegion { get; }
-    string RegionCode { get; }
-    string SubRegionCode { get; }
-    string IntermediateRegionCode { get; }
+      public string Alpha2 { get; }
+      public string Alpha3 { get; }
+      public string Name { get; }
+      public string Name2 { get; }
+      public string NativeName { get; }
+      public string Capital { get; }
+      public string CountryCode { get; }
+      public string Continent { get; }
+      public string ContinentAlpha2 { get; }
+      public string Wiki { get; }
+      public string Flag { get; }
+      public int[] Phones { get; }
+      public string[] Currencies { get; }
+      public string[] Languages { get; }
 }
    ```
    
@@ -49,12 +59,12 @@ class Country
   ```csharp
 class Language
 {
-    string Name { get; }
-    string Alpha2 { get; }
-    string Alpha3 { get; }
-    string CountryCode { get; }
-    string Family { get; }
-    string NativeName { get; }
+      public string Alpha2 { get; }
+      public string Alpha3 { get; }
+      public string Name { get; }
+      public string Name2 { get; }
+      public string NativeName { get; }
+      public string Family { get; }
 }
    ```
 ### Currency model

@@ -1,4 +1,4 @@
-﻿namespace ISOLib.Collections
+﻿namespace ISOLib.Interfaces
 {
     /// <summary>
     /// Represents an interface for ISO standards, providing information about their names and numbers.

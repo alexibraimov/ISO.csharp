@@ -1,7 +1,7 @@
 ﻿namespace ISO.Tests
 {
-    using NUnit.Framework;
     using ISOLib;
+    using NUnit.Framework;
 
     [TestFixture]
     public class ISOTests
@@ -9,7 +9,7 @@
         [SetUp]
         public void SetUp()
         {
-            
+
         }
 
         [TestCase("USA", "United States of America")]
@@ -21,22 +21,21 @@
         [TestCase("KGZ", "Kyrgyzstan")]
         public void CountryCollection_Tests(string alpha3, string name)
         {
-            Assert.AreEqual(ISO.CountryCollection[alpha3].Name, name);
-            Assert.AreEqual(ISO.CountryCollection[name].Alpha3, alpha3);
+            Assert.AreEqual(Countries.Collection[alpha3].Name, name);
+            Assert.AreEqual(Countries.Collection[name].Alpha3, alpha3);
         }
 
-
-        [TestCase("AAR", "Afar")]
-        [TestCase("ENG", "English")]
-        [TestCase("NOR", "Norwegian")]
-        [TestCase("ZUL", "Zulu")]
-        [TestCase("TAH", "Tahitian")]
-        [TestCase("SWA", "Swahili")]
-        [TestCase("SOM", "Somali")]
+        [TestCase("aar", "Afar")]
+        [TestCase("eng", "English")]
+        [TestCase("nor", "Norwegian")]
+        [TestCase("zul", "Zulu")]
+        [TestCase("tah", "Tahitian")]
+        [TestCase("swa", "Swahili")]
+        [TestCase("som", "Somali")]
         public void LanguageCollection_Tests(string alpha3, string name)
         {
-            Assert.AreEqual(ISO.LanguageCollection[alpha3].Name, name);
-            Assert.AreEqual(ISO.LanguageCollection[name].Alpha3, alpha3);
+            Assert.AreEqual(Languages.Collection[alpha3].Name, name);
+            Assert.AreEqual(Languages.Collection[name].Alpha3, alpha3);
         }
 
         [TestCase("AFN", "Afghan afghani")]
@@ -48,8 +47,8 @@
         [TestCase("INR", "Indian rupee")]
         public void CurrencyCollection_Tests(string alpha3, string name)
         {
-            Assert.AreEqual(ISO.CurrencyCollection[alpha3].Name, name);
-            Assert.AreEqual(ISO.CurrencyCollection[name].Alpha3, alpha3);
+            Assert.AreEqual(Currencies.Collection[alpha3].Name, name);
+            Assert.AreEqual(Currencies.Collection[name].Alpha3, alpha3);
         }
     }
 }
