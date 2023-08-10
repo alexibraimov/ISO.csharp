@@ -5,6 +5,7 @@ A library that provides access to ISO standards, including ISO 639 (language cod
 
 [![NuGet version (ISOLib)](https://img.shields.io/nuget/v/ISOLib.svg?style=flat-square)](https://www.nuget.org/packages/ISOLib/)
 [![ISOLib](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/AlexanderIbraimov/ISO.csharp/actions/workflows/dotnet.yml)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/ISOLib.svg)](https://www.nuget.org/packages/ISOLib)
 
 ### Usage
 
