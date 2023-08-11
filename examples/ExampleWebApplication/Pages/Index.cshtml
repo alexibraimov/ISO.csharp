@@ -1,0 +1,45 @@
+﻿@page
+@model ExampleWebApplication.Pages.IndexModel
+@{
+    ViewData["Title"] = "Countries";
+}
+
+<table>
+    <tr>
+        <th>Alpha2</th>
+        <th>Alpha3</th>
+        <th>Name</th>
+        <th>Name</th>
+        <th>Native Name</th>
+        <th>Capital</th>
+        <th>Country Code</th>
+        <th>Continent</th>
+        <th>Continent(Alpha2)</th>
+        <th>Phone codes</th>
+        <th>Currencies</th>
+        <th>Languages</th>
+        <th>Flag</th>
+        <th>Wiki</th>
+    </tr>
+    <tbody>
+        @foreach (var country in Model.Countries)
+        {
+            <tr>
+                <td>@country.Alpha2</td>
+                <td>@country.Alpha3</td>
+                <td>@country.Name</td>
+                <td>@country.Name</td>
+                <td>@country.Name2</td>
+                <td>@country.Capital</td>
+                <td>@country.CountryCode</td>
+                <td>@country.Continent</td>
+                <td>@country.ContinentAlpha2</td>
+                <td>@string.Join(", ", @country.Phones)</td>
+                <td>@string.Join(", ", @country.Currencies)</td>
+                <td>@string.Join(", ",@country.Languages)</td>
+                <td>@country.Flag</td>
+                <td><a href="@country.Wiki">Link</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
